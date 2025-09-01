@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SZ MKT - Transforme seu Instagram em vitrine de clientes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6C63FF',
+                        secondary: '#4361EE',
+                        accent: '#00B37E',
+                        neutral: '#F5F5F7',
+                        'neutral-medium': '#6E6E73',
+                        beige: '#E8DCCA'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #6C63FF 0%, #4361EE 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(108, 99, 255, 0.3); }
+        .modal { display: none; }
+        .modal.active { display: flex; }
+        .cta-primary { background-color: #00B37E; }
+        .cta-primary:hover { background-color: #009A6B; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Hero Section with Immediate Before/After -->
+    <section class="gradient-bg text-white py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <!-- Hero Text -->
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                    Seu Instagram está <span class="text-yellow-300">afastando clientes</span> sem você perceber
+                </h1>
+                <h2 class="text-xl md:text-2xl mb-8 opacity-90 max-w-4xl mx-auto">
+                    Enquanto você posta sem estratégia, perde vendas todos os dias para concorrentes que sabem usar o digital.
+                </h2>
+                <button onclick="scrollToPlans()" class="cta-primary text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-green-600 transition-all transform hover:scale-105">
+                    Ver Planos
+                </button>
+            </div>
+
+            <!-- Before/After Visual - Immediate Impact -->
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold text-red-300 mb-6">❌ ANTES</h3>
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20">
+                        <div class="grid grid-cols-3 gap-2 mb-4">
+                            <div class="bg-gray-400 h-20 rounded flex items-center justify-center text-gray-600 text-2xl">📷</div>
+                            <div class="bg-gray-500 h-20 rounded flex items-center justify-center text-gray-600 text-2xl">📱</div>
+                            <div class="bg-gray-400 h-20 rounded flex items-center justify-center text-gray-600 text-2xl">🤳</div>
+                            <div class="bg-gray-500 h-20 rounded flex items-center justify-center text-gray-600 text-2xl">📸</div>
+                            <div class="bg-gray-400 h-20 rounded flex items-center justify-center text-gray-600 text-2xl">📷</div>
+                            <div class="bg-gray-500 h-20 rounded flex items-center justify-center text-gray-600 text-2xl">📱</div>
+                        </div>
+                        <p class="text-red-200 font-medium">Feed desorganizado, fotos improvisadas, reels que entretêm mas não vendem</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold text-green-300 mb-6">✅ DEPOIS</h3>
+                    <div class="bg-white p-6 rounded-lg shadow-xl">
+                        <div class="grid grid-cols-3 gap-2 mb-4">
+                            <div class="bg-gradient-to-br from-purple-500 to-blue-500 h-20 rounded flex items-center justify-center text-white font-bold text-lg">✨</div>
+                            <div class="bg-gradient-to-br from-blue-500 to-purple-500 h-20 rounded flex items-center justify-center text-white font-bold text-lg">🎯</div>
+                            <div class="bg-gradient-to-br from-purple-500 to-pink-500 h-20 rounded flex items-center justify-center text-white font-bold text-lg">💼</div>
+                            <div class="bg-gradient-to-br from-pink-500 to-purple-500 h-20 rounded flex items-center justify-center text-white font-bold text-lg">📈</div>
+                            <div class="bg-gradient-to-br from-purple-500 to-blue-500 h-20 rounded flex items-center justify-center text-white font-bold text-lg">🚀</div>
+                            <div class="bg-gradient-to-br from-blue-500 to-purple-500 h-20 rounded flex items-center justify-center text-white font-bold text-lg">💰</div>
+                        </div>
+                        <p class="text-gray-800 font-medium">Perfil profissional, fotos que transmitem confiança e posts que transformam seguidores em clientes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="py-16 px-4 bg-gray-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
+                Você sente que está presente no Instagram, mas não vê resultado?
+            </h2>
+            <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
+                Muitos negócios publicam com frequência, mas continuam invisíveis. O feed até parece organizado, mas não transmite autoridade. Os reels viralizam, mas não trazem clientes. E cada hora investida sem retorno é dinheiro saindo do seu bolso.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md border-l-4 border-red-500">
+                    <div class="text-red-500 text-4xl mb-4">💸</div>
+                    <h3 class="font-bold mb-3 text-lg">Você posta, mas ninguém compra</h3>
+                    <p class="text-gray-600 text-sm">Suas postagens até recebem curtidas, mas não geram vendas nem leads qualificados</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md border-l-4 border-red-500">
+                    <div class="text-red-500 text-4xl mb-4">📱</div>
+                    <h3 class="font-bold mb-3 text-lg">Seus reels até viralizam, mas não convertem</h3>
+                    <p class="text-gray-600 text-sm">Milhares de visualizações, mas zero clientes novos. Entretenimento não paga as contas</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md border-l-4 border-red-500">
+                    <div class="text-red-500 text-4xl mb-4">🎭</div>
+                    <h3 class="font-bold mb-3 text-lg">O feed parece bonito, mas não passa autoridade</h3>
+                    <p class="text-gray-600 text-sm">Feed organizado, mas as pessoas não confiam o suficiente para fechar negócio</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md border-l-4 border-red-500">
+                    <div class="text-red-500 text-4xl mb-4">⏰</div>
+                    <h3 class="font-bold mb-3 text-lg">Você gasta horas criando conteúdo sem retorno</h3>
+                    <p class="text-gray-600 text-sm">Você investe tempo e energia, mas não vê o resultado no faturamento</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-800">
+                A SZ MKT transforma esforço em resultado
+            </h2>
+            <p class="text-lg mb-12 text-gray-600 max-w-3xl mx-auto">
+                Não criamos apenas "posts bonitos". Construímos uma estratégia clara, produzimos conteúdo profissional e acompanhamos de perto para que cada publicação seja um passo em direção às vendas.
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-lg border-l-4 border-primary">
+                    <div class="text-primary text-3xl mb-4">🎯</div>
+                    <h3 class="font-bold mb-3">De posts soltos → para estratégia que educa, nutre e converte</h3>
+                    <p class="text-gray-600 text-sm">Cada publicação tem um propósito claro no funil de vendas</p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-lg border-l-4 border-primary">
+                    <div class="text-primary text-3xl mb-4">📸</div>
+                    <h3 class="font-bold mb-3">De fotos improvisadas → para imagens profissionais que passam credibilidade</h3>
+                    <p class="text-gray-600 text-sm">Material visual que transmite confiança e autoridade</p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-lg border-l-4 border-primary">
+                    <div class="text-primary text-3xl mb-4">🎨</div>
+                    <h3 class="font-bold mb-3">De feed genérico → para identidade forte que marca presença</h3>
+                    <p class="text-gray-600 text-sm">Sua marca será reconhecida instantaneamente no feed</p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-lg border-l-4 border-primary">
+                    <div class="text-primary text-3xl mb-4">📱</div>
+                    <h3 class="font-bold mb-3">De stories sem engajamento → para roteiros práticos que aproximam clientes</h3>
+                    <p class="text-gray-600 text-sm">Conexão autêntica que gera interesse e vendas</p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-lg border-l-4 border-primary">
+                    <div class="text-primary text-3xl mb-4">📊</div>
+                    <h3 class="font-bold mb-3">De métricas vazias → para relatórios que mostram leads e vendas reais</h3>
+                    <p class="text-gray-600 text-sm">Acompanhamento focado no que realmente importa: resultados</p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-lg border-l-4 border-primary">
+                    <div class="text-primary text-3xl mb-4">🚀</div>
+                    <h3 class="font-bold mb-3">De alcance limitado → para campanhas de tráfego que levam sua mensagem a quem compra</h3>
+                    <p class="text-gray-600 text-sm">Seu conteúdo chega ao público certo no momento certo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section id="plans" class="py-16 px-4 bg-gray-100">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-800">
+                Três caminhos para transformar seu Instagram
+            </h2>
+            <p class="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+                Cada pacote resolve uma dor diferente. Escolha o que mais combina com seu momento.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Essencial -->
+                <div class="bg-white rounded-lg p-8 shadow-lg card-hover border-2 border-primary relative">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
+                        Mais Escolhido
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary">Essencial</h3>
+                    <div class="mb-6">
+                        <div class="text-3xl font-bold text-gray-800">R$ 550<span class="text-lg text-gray-500">/mês</span></div>
+                        <div class="text-sm text-gray-500">Contrato de 6 meses • Total: R$ 3.300</div>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg mb-6">
+                        <p class="text-sm text-purple-800 font-medium">Para quem precisa começar a vender no Instagram com consistência mínima e organização</p>
+                    </div>
+                    <ul class="mb-8 space-y-3 text-sm">
+                        <li class="flex items-center"><span class="text-accent mr-2">✓</span> <strong>Gestão estratégica</strong> do feed e stories</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">✓</span> <strong>12 artes estratégicas</strong> todo mês</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">✓</span> <strong>Direcionamento de stories</strong> gravados pelo cliente</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">✓</span> <strong>1 reel por mês</strong> roteirizado</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">✓</span> <strong>Ensaio inicial</strong> com até 20 fotos profissionais</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">✓</span> <strong>Relatório mensal</strong> e organização de perfil</li>
+                    </ul>
+                    <button onclick="openModal('essencial')" class="w-full gradient-bg text-white py-3 rounded-lg font-semibold hover:opacity-90 transition-all">
+                        Ver proposta detalhada
+                    </button>
+                </div>
+
+                <!-- Intermediário -->
+                <div class="bg-white rounded-lg p-8 shadow-lg card-hover">
+                    <h3 class="text-2xl font-bold mb-4 text-primary">Reels + Fotografia</h3>
+                    <div class="mb-6">
+                        <div class="text-3xl font-bold text-gray-800">R$ 800<span class="text-lg text-gray-500">/mês</span></div>
+                        <div class="text-sm text-gray-500">Contrato mínimo de 6 meses</div>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                        <p class="text-sm text-blue-800 font-medium">Para quem já tem presença, mas precisa de material profissional para transmitir autoridade</p>
+                    </div>
+                    <ul class="mb-8 space-y-3 text-sm">
+                        <li class="flex items-center"><span class="text-accent mr-2">✓</span> <strong>10 fotos profissionais</strong> por mês (editadas)</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">✓</span> <strong>3 reels por mês</strong> roteirizados e gravados</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">✓</span> <strong>Edição básica inclusa</strong> (reels e fotos prontos)</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">✓</span> <strong>Entrega via Google Drive</strong></li>
+                        <li class="flex items-center"><span class="text-accent mr-2">✓</span> <strong>Cobertura de eventos</strong> (duração a verificar)</li>
+                    </ul>
+                    <button onclick="openModal('intermediario')" class="w-full gradient-bg text-white py-3 rounded-lg font-semibold hover:opacity-90 transition-all">
+                        Ver proposta detalhada
+                    </button>
+                </div>
+
+                <!-- Profissional -->
+                <div class="bg-white rounded-lg p-8 shadow-lg card-hover">
+                    <h3 class="text-2xl font-bold mb-4 text-primary">Assessoria Completa</h3>
+                    <div class="mb-6">
+                        <div class="text-3xl font-bold text-gray-800">R$ 1.250<span class="text-lg text-gray-500">/mês</span></div>
+                        <div class="text-sm text-accent font-semibold">R$ 6.000 antecipado (20% OFF)</div>
+                        <div class="text-sm text-gray-500">R$ 2.400 à vista + 5x R$ 720 no Pix</div>
+                    </div>
+                    <div class="bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-lg mb-6">
+                        <p class="text-sm text-gray-800 font-medium">Para quem quer dominar o Instagram com gestão completa, conteúdo premium e tráfego pago</p>
+                    </div>
+                    <ul class="mb-8 space-y-3 text-sm">
+                        <li class="flex items-center"><span class="text-accent mr-2">✓</span> <strong>Gestão estratégica completa</strong> (posts ilimitados)</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">✓</span> <strong>KV mensal</strong> + artes estratégicas</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">✓</span> <strong>3 reels + 2 ensaios</strong> (40 fotos iniciais + renovação)</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">✓</span> <strong>2 campanhas de tráfego pago</strong> incluídas</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">✓</span> <strong>Atendimento 7 dias</strong> + suporte prioritário</li>
+                    </ul>
+                    <button onclick="openModal('profissional')" class="w-full gradient-bg text-white py-3 rounded-lg font-semibold hover:opacity-90 transition-all">
+                        Ver proposta detalhada
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">
+                Como funciona
+            </h2>
+            <div class="grid md:grid-cols-5 gap-8 items-center">
+                <div class="text-center">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">1</div>
+                    <p class="font-semibold">Você escolhe o plano</p>
+                </div>
+                <div class="hidden md:block text-purple-400 text-2xl">→</div>
+                <div class="text-center">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">2</div>
+                    <p class="font-semibold">Visualiza a proposta detalhada</p>
+                </div>
+                <div class="hidden md:block text-purple-400 text-2xl">→</div>
+                <div class="text-center">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">3</div>
+                    <p class="font-semibold">Se gostar, clica em "Fechar agora"</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 items-center mt-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">4</div>
+                    <p class="font-semibold">Faz o pagamento (cartão recorrente ou Pix)</p>
+                </div>
+                <div class="hidden md:block text-purple-400 text-2xl">→</div>
+                <div class="text-center">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">5</div>
+                    <p class="font-semibold">Em até 30 dias seu Instagram já começa a ter uma nova cara</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="gradient-bg text-white py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                Cada dia sem estratégia é dinheiro que você deixa na mesa
+            </h2>
+            <p class="text-xl mb-8 opacity-90">
+                Comece agora a transformar seu perfil em uma vitrine de clientes.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="scrollToPlans()" class="cta-primary text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-green-600 transition-all transform hover:scale-105">
+                    Escolher meu plano
+                </button>
+                <button onclick="openWhatsApp()" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-primary transition-all">
+                    Tirar dúvidas no WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Essencial -->
+    <div id="modal-essencial" class="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h1 class="text-3xl font-bold text-primary">Proposta Completa do Plano Essencial</h1>
+                    <button onclick="closeModal('essencial')" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+                </div>
+                
+                <div class="bg-red-50 border-l-4 border-red-500 p-6 mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-red-700">O que está custando caro para você</h2>
+                    <p class="text-gray-700">Seu perfil até posta, mas não gera vendas consistentes. Você investe tempo e dinheiro, mas não vê retorno real no faturamento. Cada dia sem estratégia é receita perdida.</p>
+                </div>
+                
+                <div class="bg-green-50 border-l-4 border-green-500 p-6 mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-green-700">Como vamos resolver isso</h2>
+                    <p class="text-gray-700">Vamos organizar seu Instagram para vender de verdade. Estratégia clara, conteúdo profissional e acompanhamento constante para você ver resultados reais no seu negócio.</p>
+                </div>
+                
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">Tudo que você vai receber</h2>
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-primary mb-2">📋 Gestão Estratégica</h4>
+                        <p class="text-sm text-gray-600">Planejamento completo do seu feed e stories focado em conversão</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-primary mb-2">🎨 12 Artes Estratégicas</h4>
+                        <p class="text-sm text-gray-600">Posts mensais que educam e direcionam para a venda</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-primary mb-2">📱 Direcionamento de Stories</h4>
+                        <p class="text-sm text-gray-600">Roteiros para você gravar stories que realmente vendem</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-primary mb-2">🎬 1 Reel por Mês</h4>
+                        <p class="text-sm text-gray-600">Roteirizado e gravado no mesmo dia para máximo engajamento</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-primary mb-2">📸 Ensaio Inicial</h4>
+                        <p class="text-sm text-gray-600">Até 20 fotos profissionais para abastecer todo o contrato</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-primary mb-2">📊 Relatório + Organização</h4>
+                        <p class="text-sm text-gray-600">Acompanhamento mensal de resultados e organização de perfil</p>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-6">
+                    <h2 class="text-xl font-bold mb-3 text-blue-700">Serviços Adicionais Disponíveis</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">🎯 Tráfego Pago</h4>
+                            <p class="text-sm text-gray-700 mb-1"><strong>Gestão:</strong> R$ 150/mês para até 2 campanhas simultâneas</p>
+                            <p class="text-sm text-gray-700"><strong>Verba:</strong> Definida pelo cliente, paga diretamente à Meta</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">🎉 Cobertura de Eventos</h4>
+                            <p class="text-sm text-gray-700 mb-1"><strong>Valor:</strong> Definido após análise da duração e formato do evento</p>
+                            <p class="text-sm text-gray-700"><strong>Inclui:</strong> Registro fotográfico e gravação de reels estratégicos durante o evento</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800">Investimento e Condições</h2>
+                    <div class="text-center mb-4">
+                        <div class="text-4xl font-bold text-primary mb-2">R$ 550<span class="text-lg text-gray-500">/mês</span></div>
+                        <div class="text-gray-600">Contrato de 6 meses • Total no cartão: R$ 3.300</div>
+                    </div>
+                </div>
+                
+                <h2 class="text-2xl font-bold mb-6 text-gray-800">Comece agora mesmo</h2>
+                <div class="flex flex-col lg:flex-row gap-4 justify-center items-center">
+                    <a href="https://pay.kiwify.com.br/aGZx6x4" target="_blank" class="w-full lg:w-64 bg-green-600 hover:bg-green-700 text-white px-6 py-4 rounded-lg font-semibold transition-all text-center">
+                        💰 À vista R$ 3.000
+                    </a>
+                    <a href="https://pay.kiwify.com.br/mbhMgVF" target="_blank" class="w-full lg:w-64 bg-primary hover:bg-secondary text-white px-6 py-4 rounded-lg font-semibold transition-all text-center">
+                        🔄 Recorrente R$ 550/mês
+                    </a>
+                    <button onclick="openWhatsApp()" class="w-full lg:w-64 bg-white border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-4 rounded-lg font-semibold transition-all">
+                        💬 Conversar no WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Intermediário -->
+    <div id="modal-intermediario" class="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h1 class="text-3xl font-bold text-primary">Proposta Completa: Reels + Fotografia</h1>
+                    <button onclick="closeModal('intermediario')" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+                </div>
+                
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg mb-6">
+                    <h3 class="text-xl font-bold text-blue-700 mb-2">Para quem precisa de material consistente</h3>
+                    <p class="text-gray-700">Atende empresas e profissionais que não querem gestão completa, mas precisam de material consistente e profissional para suas redes sociais.</p>
+                </div>
+                
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">O que você recebe mensalmente</h2>
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-primary mb-2">📸 10 Fotos Profissionais</h4>
+                        <p class="text-sm text-gray-600">Editadas e entregues via Google Drive, prontas para publicação</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-primary mb-2">🎬 3 Reels por Mês</h4>
+                        <p class="text-sm text-gray-600">Roteirizados e gravados no mesmo dia com edição básica inclusa</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-primary mb-2">✂️ Edição Básica Inclusa</h4>
+                        <p class="text-sm text-gray-600">Reels e fotos prontos para publicação, sem trabalho extra para você</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-primary mb-2">🎉 Cobertura de Eventos</h4>
+                        <p class="text-sm text-gray-600">Verificar duração do evento para cobertura fotográfica</p>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-6">
+                    <h2 class="text-xl font-bold mb-3 text-blue-700">Serviços Adicionais Disponíveis</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">🎯 Tráfego Pago</h4>
+                            <p class="text-sm text-gray-700 mb-1"><strong>Gestão:</strong> R$ 150/mês para até 2 campanhas simultâneas</p>
+                            <p class="text-sm text-gray-700"><strong>Verba:</strong> Definida pelo cliente, paga diretamente à Meta</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">🎉 Cobertura de Eventos</h4>
+                            <p class="text-sm text-gray-700 mb-1"><strong>Valor:</strong> Definido após análise da duração e formato do evento</p>
+                            <p class="text-sm text-gray-700"><strong>Inclui:</strong> Registro fotográfico e gravação de reels estratégicos durante o evento</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800">Investimento</h2>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">R$ 800<span class="text-lg text-gray-500">/mês</span></div>
+                        <div class="text-gray-600">Contrato mínimo de 6 meses</div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row gap-4 justify-center items-center">
+                    <a href="https://pay.kiwify.com.br/DOHXLF5" target="_blank" class="w-full lg:w-64 bg-green-600 hover:bg-green-700 text-white px-6 py-4 rounded-lg font-semibold transition-all text-center">
+                        💰 À vista R$ 4.000
+                    </a>
+                    <a href="https://pay.kiwify.com.br/LO5SYnZ" target="_blank" class="w-full lg:w-64 bg-primary hover:bg-secondary text-white px-6 py-4 rounded-lg font-semibold transition-all text-center">
+                        🔄 6x R$ 800/mês
+                    </a>
+                    <button onclick="openWhatsApp()" class="w-full lg:w-64 bg-white border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-4 rounded-lg font-semibold transition-all">
+                        💬 Conversar no WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Profissional -->
+    <div id="modal-profissional" class="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h1 class="text-3xl font-bold text-primary">Assessoria Completa em Instagram</h1>
+                    <button onclick="closeModal('profissional')" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+                </div>
+                
+                <div class="bg-gradient-to-r from-purple-50 to-blue-50 border-l-4 border-primary p-6 rounded-lg mb-6">
+                    <h3 class="text-xl font-bold text-primary mb-2">Solução 100% completa para dominar o Instagram</h3>
+                    <p class="text-gray-700">Para empresas que querem escalar vendas com estratégia completa, produção ilimitada e tráfego pago incluso.</p>
+                </div>
+                
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">Entregas mensais e acompanhamento</h2>
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-primary mb-2">📋 Gestão Estratégica Completa</h4>
+                        <p class="text-sm text-gray-600">Feed e stories sem limite de posts, planejados pela SZ MKT</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-primary mb-2">🎨 KV Mensal + Artes</h4>
+                        <p class="text-sm text-gray-600">Identidade visual mensal para manter a marca sempre atual</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-primary mb-2">🛍️ Orçamento de Produtos</h4>
+                        <p class="text-sm text-gray-600">Pesquisa e repasse ao cliente para economia de tempo</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-primary mb-2">📱 Atendimento 7 Dias</h4>
+                        <p class="text-sm text-gray-600">WhatsApp também aos sábados e domingos</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-primary mb-2">🎬 3 Reels + 2 Ensaios</h4>
+                        <p class="text-sm text-gray-600">40 fotos iniciais + segundo ensaio no 3º mês</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-primary mb-2">🎯 2 Campanhas de Tráfego</h4>
+                        <p class="text-sm text-gray-600">Planejamento + configuração inclusos, mídia paga à parte</p>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-6">
+                    <h2 class="text-xl font-bold mb-3 text-blue-700">Serviços Adicionais Disponíveis</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">🎉 Cobertura de Eventos</h4>
+                            <p class="text-sm text-gray-700 mb-1"><strong>Valor:</strong> Definido após análise da duração e formato do evento</p>
+                            <p class="text-sm text-gray-700"><strong>Inclui:</strong> Registro fotográfico e gravação de reels estratégicos durante o evento</p>
+                        </div>
+                        <p class="text-sm text-gray-600 italic">*Tráfego pago já incluso no plano (2 campanhas mensais)</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800">Investimento</h2>
+                    <div class="text-center mb-4">
+                        <div class="text-4xl font-bold text-primary mb-2">R$ 1.250<span class="text-lg text-gray-500">/mês</span></div>
+                        <div class="text-gray-600 mb-2">Pagamento recorrente no cartão: R$ 7.500 em 6 meses</div>
+                        <div class="bg-accent text-white p-3 rounded-lg">
+                            <div class="font-bold">💰 Pagamento antecipado com 20% OFF: R$ 6.000</div>
+                            <div class="text-sm">R$ 2.400 à vista + 5x de R$ 720 via Pix (dia 1 a 5)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row gap-4 justify-center items-center">
+                    <a href="https://pay.kiwify.com.br/JBSpHAx" target="_blank" class="w-full lg:w-64 bg-green-600 hover:bg-green-700 text-white px-6 py-4 rounded-lg font-semibold transition-all text-center">
+                        💰 À vista R$ 6.000 (20% OFF)
+                    </a>
+                    <a href="https://pay.kiwify.com.br/nxrVUbj" target="_blank" class="w-full lg:w-64 bg-primary hover:bg-secondary text-white px-6 py-4 rounded-lg font-semibold transition-all text-center">
+                        🔄 Recorrente R$ 1.250/mês
+                    </a>
+                    <button onclick="openWhatsApp()" class="w-full lg:w-64 bg-white border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-4 rounded-lg font-semibold transition-all">
+                        💬 Conversar no WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function scrollToPlans() {
+            document.getElementById('plans').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function openModal(plan) {
+            document.getElementById('modal-' + plan).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(plan) {
+            document.getElementById('modal-' + plan).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function openWhatsApp() {
+            const message = encodeURIComponent("Olá, quero saber mais sobre a assessoria da SZ MKT");
+            window.open(`https://wa.me/556699271791?text=${message}`, '_blank');
+        }
+
+        function checkout() {
+            alert('Redirecionando para o checkout... (Funcionalidade de demonstração)');
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                const modalId = e.target.id.split('-')[1];
+                closeModal(modalId);
+            }
+        });
+
+        // Close modal with ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const activeModal = document.querySelector('.modal.active');
+                if (activeModal) {
+                    const modalId = activeModal.id.split('-')[1];
+                    closeModal(modalId);
+                }
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'977dd7a251631aa5',t:'MTc1NjY1NzA5MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
